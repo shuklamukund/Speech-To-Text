@@ -1,8 +1,18 @@
 import React from 'react'
 import './App.css'
-
+import regeneratorRuntime from 'regenerator-runtime'
+import SpeechRecognition,{useSpeechRecognition} from 'react-speech-recognition'
 function App() {
  
+  const {
+    transcript,
+    resetTranscript,
+    browserSupportsSpeechRecognition
+  } = useSpeechRecognition();
+
+  if(!browserSupportsSpeechRecognition) {
+    return <span>Browser doesnot support speech recognition.</span>
+  }
 
   return (
     <>
@@ -12,15 +22,18 @@ function App() {
 
         <div className='main-content'>
         
+        {transcript}
 
         </div>
         <div className='btn-style'>
           <button>Copy</button>
-          <button>Start Listening</button>
-          <button>Stop Listening</button>
+          <button onClick={SpeechRecognition.startListening({continuous:true, language:'en-IN'})}>Start Listening</button>
+          <button onClick={SpeechRecognition.stopListening}>Stop Listening</button>
+          <button onClick={resetTranscript}>Reset</button>
         </div>
-        
+        <h1>hii </h1>
       </div>
+      <h1>hii</h1>
     </>
   )
 }

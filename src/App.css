@@ -9,9 +9,9 @@ p{
   color: burlywood;
 }
 .main-content{
-    max-width: 50rem;
+    max-width: 30rem;
     width: 100%;
-    min-height: 400px;
+    min-height: 200px;
     height: auto;
     padding: 18px 18px 120px 18px;
     position: relative;
@@ -26,11 +26,11 @@ button{
     background: rgb(17 166 131);
     color: rgb(255 255 255);
     border-radius: 6px;
-    padding: 16px 32px;
+    padding: 8px 16px;
     border: none;
     font-size: 18px;
     letter-spacing: 1px;
-    margin: 20px;
+    margin: 5px;
     position: relative;
     margin-top: -80px;
     cursor: pointer;  
